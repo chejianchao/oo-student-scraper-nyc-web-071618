@@ -6,7 +6,7 @@ class Scraper
   def self.scrape_index_page(index_url)
     student_hash = []
     doc = Nokogiri.HTML(open(index_url))
-    doc.css(".roster-cards-container div").map{|div|
+    doc.css(".roster-cards-container div").ech{|div|
       profile_url = div.css("a").attribute("href").value
       name = div.css(".card-text-container h4").text
       location = div.css(".card-text-container p").text
