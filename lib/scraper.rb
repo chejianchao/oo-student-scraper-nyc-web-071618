@@ -20,10 +20,21 @@ class Scraper
     profile = {}
     doc = Nokogiri.HTML(open(profile_url))
     social_node = doc.css(".social-icon-container a")
-    keys = [:twitter, :linkedin, :github, :blog]
+    keys = [:twitter, :linkedin, :github]
+    flag = false
     social_node.each_with_index {|s, index|
-      profile[keys[index]] = s.attribute("href").value
+      href = s.attribute("href").value
+      keys.each{|key|
+        
+        if(flag == false && href.include?(key+".com")){
+          profile[key] = value
+          flag = true
+        }
+      }
     }
+    if flag == false
+      profile[:blog] = 
+    end
     quote = doc.css(".vitals-text-container div").first.text
     profile[:profile_quote] = quote
     bio = doc.css(".details-container .bio-block.details-block .description-holder p").text
