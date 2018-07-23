@@ -23,7 +23,6 @@ class Scraper
     keys = [:twitter, :linkedin, :github, :blog]
     social_node.each_with_index {|s, index|
       profile[keys[idx]] = s.attribute("href").value
-      puts index
     }
   end
 
