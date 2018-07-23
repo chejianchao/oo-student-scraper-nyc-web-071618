@@ -24,7 +24,7 @@ class Scraper
     social_node.each_with_index {|s, index|
       profile[keys[idx]] = s.attribute("href").value
     }
-    quote = doc.css(".vitals-text-container.profile-quote")
+    quote = doc.css(".vitals-text-container.profile-quote").text
   end
 
 end
