@@ -21,7 +21,6 @@ class Scraper
     doc = Nokogiri.HTML(open(profile_url))
     social_node = doc.css(".social-icon-container a")
     #keys = [:twitter, :linkedin, :github]
-    
     social_node.each_with_index {|s, index|
       href = s.attribute("href").value
       flag = false
