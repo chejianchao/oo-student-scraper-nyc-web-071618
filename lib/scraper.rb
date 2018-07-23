@@ -28,11 +28,11 @@ class Scraper
     profile[:profile_quote] = '"'+ quote + '"'
     bio = doc.css(".details-container .bio-block.details-block .description-holder p").text
     profile[:bil] = bio
-    profi
+    profile
   end
 
 end
 
 #puts Scraper.scrape_index_page("./fixtures/student-site/index.html")
-Scraper.scrape_profile_page("./fixtures/student-site/students/ryan-johnson.html")
+puts Scraper.scrape_profile_page("./fixtures/student-site/students/ryan-johnson.html")
 
