@@ -10,7 +10,7 @@ class Scraper
       profile_url = div.css("a").attribute("href").value
       name = div.css(".card-text-container h4").text
       location = div.css(".card-text-container p").text
-      { :name => name, :location => location, :profile_url => profile_url}
+      #{ :name => name, :location => location, :profile_url => profile_url}
       
     }
   end
