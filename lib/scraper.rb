@@ -17,8 +17,10 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
+    profile = {}
     doc = Nokogiri.HTML(open(profile_url))
-    puts doc.css(".social-icon-container a").size
+    social_node = doc.css(".social-icon-container a")
+    puts social_node[0].attribute("href").value
   end
 
 end
