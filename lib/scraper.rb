@@ -14,5 +14,5 @@ class Scraper
 
 end
 
-Scraper("http://67.205.152.27:48674/fixtures/student-site/")
+Scraper.("http://67.205.152.27:48674/fixtures/student-site/")
 
