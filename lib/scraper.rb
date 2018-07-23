@@ -11,7 +11,7 @@ class Scraper
       name = div.css(".card-text-container h4").text
       location = div.css(".card-text-container p").text
       #{ :name => name, :location => location, :profile_url => profile_url}
-      
+      puts name
     }
   end
 
