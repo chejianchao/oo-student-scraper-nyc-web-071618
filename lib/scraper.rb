@@ -25,7 +25,7 @@ class Scraper
       profile[keys[index]] = s.attribute("href").value
     }
     quote = doc.css(".vitals-text-container div").first.text
-    profile[:profile_quote] = "\"#{quote}\""
+    profile[:profile_quote] = quote
     bio = doc.css(".details-container .bio-block.details-block .description-holder p").text
     profile[:bio] = bio
     profile
