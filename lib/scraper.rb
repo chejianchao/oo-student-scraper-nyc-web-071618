@@ -8,7 +8,7 @@ class Scraper
     doc = Nokogiri.HTML(open(index_url))
     doc.css(".roster-cards-container div").each{|div|
       
-      profile_url = div.css("a").attribute("href").value
+      profile_url = div.css(".student-card").attribute("href").value
       name = div.css(".card-text-container h4").text
       location = div.css(".card-text-container p").text
       puts profile_url, name, location
