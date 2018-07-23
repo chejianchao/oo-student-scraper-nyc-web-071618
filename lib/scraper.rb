@@ -20,7 +20,7 @@ class Scraper
     profile = {}
     doc = Nokogiri.HTML(open(profile_url))
     social_node = doc.css(".social-icon-container a")
-    puts social_node[0].attribute("href").value
+    social_node.each {|s| puts s.attribute("href").value }
   end
 
 end
