@@ -22,7 +22,7 @@ class Scraper
     social_node = doc.css(".social-icon-container a")
     keys = [:twitter, :linkedin, :github, :blog]
     social_node.each_with_index {|s, index|
-      profile[keys[idx]] = s.attribute("href").value
+      profile[keys[index]] = s.attribute("href").value
     }
     quote = doc.css(".vitals-text-container.profile-quote").text
     puts quote
