@@ -20,11 +20,9 @@ class Scraper
     profile = {}
     doc = Nokogiri.HTML(open(profile_url))
     social_node = doc.css(".social-icon-container a")
-    idx = 0
     keys = [:twitter, :linkedin, :github, :blog]
     social_node.each_with_index {|s, index|
       profile[keys[idx]] = s.attribute("href").value
-      idx+=1
       puts index
     }
   end
