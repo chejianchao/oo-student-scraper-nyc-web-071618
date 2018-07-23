@@ -6,7 +6,8 @@ class Scraper
   def self.scrape_index_page(index_url)
     doc = Nokogiri.HTML(open(index_url))
     doc.css(".roster-cards-container div").each{|div|
-      div.css
+      profile_url = div.css("a").attribute("href").value
+      name = div.
     }
   end
 
