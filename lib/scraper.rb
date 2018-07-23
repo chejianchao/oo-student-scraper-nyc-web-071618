@@ -26,7 +26,7 @@ class Scraper
     }
     quote = doc.css(".vitals-text-container div").first.text
     profile[:profile_quote] = '"'+ quote + '"'
-    bio = doc.css(".details-container ")
+    bio = doc.css(".details-container .bio-block details-block .")
   end
 
 end
