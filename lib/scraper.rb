@@ -9,6 +9,8 @@ class Scraper
       profile_url = div.css("a").attribute("href").value
       name = div.css(".card-text-container h4").text
       location = div.css(".card-text-container p").text
+      puts profile_url, name, location
+      return 
     }
   end
 
