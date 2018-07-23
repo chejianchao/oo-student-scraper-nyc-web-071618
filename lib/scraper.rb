@@ -39,7 +39,7 @@ class Scraper
     profile[:profile_quote] = quote
     bio = doc.css(".details-container .bio-block.details-block .description-holder p").text
     profile[:bio] = bio
-    profile
+    profil
     binding.pry
   end
 
