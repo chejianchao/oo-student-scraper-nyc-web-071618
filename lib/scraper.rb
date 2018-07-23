@@ -40,6 +40,7 @@ class Scraper
     bio = doc.css(".details-container .bio-block.details-block .description-holder p").text
     profile[:bio] = bio
     profile
+    binding.pry
   end
 
 end
