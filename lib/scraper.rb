@@ -8,7 +8,7 @@ class Scraper
     doc.css(".roster-cards-container div").each{|div|
       profile_url = div.css("a").attribute("href").value
       name = div.css(".card-text-container h4").text
-      location = div.css(".card-text-container")
+      location = div.css(".card-text-container p").text
     }
   end
 
