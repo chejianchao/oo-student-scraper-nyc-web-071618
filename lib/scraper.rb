@@ -25,6 +25,7 @@ class Scraper
       profile[keys[idx]] = s.attribute("href").value
     }
     quote = doc.css(".vitals-text-container.profile-quote").text
+    puts quote
     profile[:profile_quote] = '"'+ quote + '"'
   end
 
