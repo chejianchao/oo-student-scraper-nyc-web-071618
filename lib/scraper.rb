@@ -26,7 +26,7 @@ class Scraper
       href = s.attribute("href").value
       keys.each{|key|
         
-        if(flag == false && href.include?(key+".com")){
+        if(href.include?(key.to_s+".com")){
           profile[key] = value
           flag = true
         }
