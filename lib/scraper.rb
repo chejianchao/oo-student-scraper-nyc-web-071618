@@ -17,10 +17,16 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    profile = {}
+    
     doc = Nokogiri.HTML(open(profile_url))
     social_node = doc.css(".social-icon-container a")
-    social_node.each {|s| puts s.attribute("href").value }
+    idx = 0
+    keys = [:twitter, :linkedin, :github, :blog]
+    social_node.each_with_index {|s, index|
+      profile[keys[idx]] = s.attribute("href").value
+      idx+=1
+      puts index`
+    }
   end
 
 end
